@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\ApiController;
-use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -12,7 +11,7 @@ class UserController extends ApiController
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
@@ -25,7 +24,7 @@ class UserController extends ApiController
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      * @throws \Illuminate\Validation\ValidationException
      */
 
@@ -57,7 +56,7 @@ class UserController extends ApiController
      * Display the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show($id)
     {
@@ -71,7 +70,7 @@ class UserController extends ApiController
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(Request $request, $id)
     {
@@ -81,6 +80,8 @@ class UserController extends ApiController
             'password' => 'min:6|conformed',
             'admin' => 'in:' . User::ADMIN_USER . ',' . User::REGULAR_USER,
         ];
+
+        $this->validate($request,$rules);
 
         if ($request->has('name')) {
             $user->name = $request->name;
@@ -97,13 +98,13 @@ class UserController extends ApiController
 
         if ($request->has('admin')){
             if (!$user->isVerified()){
-                return response()->json(['error'=>'only verified users can modify the admin field','code'=>409],409);
+                return $this->errorResponse('only verified users can modify the admin field',409);
             }
             $user->admin = $request->admin;
 
         }
         if(!$user->isDirty()){
-            return response()->json(['error'=>'you need to specify a different value to update','code'=>409],409);
+            return $this->errorResponse('you need to specify a different value to update',409);
         }
         $user->save();
         return $this->showOne($user);
