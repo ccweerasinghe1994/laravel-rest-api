@@ -1,7 +1,7 @@
 ## Setup
 > 
 1. Install Composer
-cmd. in gitbash type  `composer create-project laravel/laravel restapi` 
+1. cmd. in gitbash type  `composer create-project laravel/laravel restapi` 
 >example :-
  ```c
 wchamara@DESKTOP-44CNAP9 MINGW64 ~/Desktop/test
