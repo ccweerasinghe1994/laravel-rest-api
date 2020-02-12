@@ -6,4 +6,6 @@
 1. [Laravel Project Structure](Docs/projectStructure.md)
 1. [Php Artisan helper](Docs/phpArtisan.md)
 1. [Environment Setup](Docs/env.md)
+1. [How To remove "api" part from the Routes](Docs/api.md)
+
 
