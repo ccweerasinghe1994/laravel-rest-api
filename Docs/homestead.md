@@ -12,7 +12,7 @@
     vendor\\bin\\homestead make 
 
     ```
-3. Open  [HomeStead.yml](../Homestead.yaml) file and change the data to your liking
+3. Open  [HomeStead.yml](Homestead.yaml) file and change the data to your liking
 
 4. To Generate the `ssh` key type in `Git-bash` 
     ```c
