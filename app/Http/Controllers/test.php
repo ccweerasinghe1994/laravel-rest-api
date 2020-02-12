@@ -13,18 +13,11 @@ class test extends Controller
         $data = [];
 
         $users = DB::table('users')
-            ->orderBy('id')
-            ->chunk(100,function ($users) {
-
-                foreach ($users as $user){
-
-                    $user = $user->name;
-                    return $user;
-                }
-
-
-            });
-        return response()->json(['data'=>$users],200);
+            ->where('id',1)
+            ->pluck('name');
+        
+       
+        return response()->json(['data'=>empty($users)],200);
 
     }
 }
