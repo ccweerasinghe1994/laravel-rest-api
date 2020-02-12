@@ -17,38 +17,38 @@ use Illuminate\Http\Request;
  * Buyers
  */
 
-\Illuminate\Support\Facades\Route::resource('buyers','Buyer\BuyerController',['only'=>['index','show']]);
+\Illuminate\Support\Facades\Route::resource('buyers', 'Buyer\BuyerController', ['only' => ['index', 'show']]);
 
 /**
  * Sellers
  */
 
-\Illuminate\Support\Facades\Route::resource('sellers','Seller\SellerController',['only'=>['index','show']]);
+\Illuminate\Support\Facades\Route::resource('sellers', 'Seller\SellerController', ['only' => ['index', 'show']]);
 
 /**
  * product
  */
 
-\Illuminate\Support\Facades\Route::resource('product','Product\ProductController',['only'=>['index','show']]);
+\Illuminate\Support\Facades\Route::resource('product', 'Product\ProductController', ['only' => ['index', 'show']]);
 
 /**
  * Category
  */
 
-\Illuminate\Support\Facades\Route::resource('category','Category\CategoryController',['except'=>['create','edit']]);
+\Illuminate\Support\Facades\Route::resource('category', 'Category\CategoryController', ['except' => ['create', 'edit']]);
 
 /**
  * Transaction
  */
 
-\Illuminate\Support\Facades\Route::resource('buyers','Buyer\BuyerController',['only'=>['index','show']]);
+\Illuminate\Support\Facades\Route::resource('buyers', 'Buyer\BuyerController', ['only' => ['index', 'show']]);
 
 /**
  * User
  */
 
-\Illuminate\Support\Facades\Route::resource('users','User\UserController',['except'=>['create','edit']]);
+\Illuminate\Support\Facades\Route::resource('users', 'User\UserController', ['except' => ['create', 'edit']]);
 
 
 
-\Illuminate\Support\Facades\Route::resource('test','test',['except'=>['create','edit']]);
+\Illuminate\Support\Facades\Route::resource('test', 'test', ['except' => ['create', 'edit']]);

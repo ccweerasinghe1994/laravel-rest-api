@@ -7,5 +7,5 @@
 1. [Php Artisan helper](Docs/phpArtisan.md)
 1. [Environment Setup](Docs/env.md)
 1. [How To remove "api" part from the Routes](Docs/api.md)
-
-
+1. [Creating Models](Docs/models.md)
+1. [Creating Routes](Docs/route.md)
